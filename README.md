@@ -35,7 +35,7 @@ You will need to make sure that `Biopython` is installed on your device for anal
 pip install biopython
 ```
 
-Once Biopython is installed, you will be able to run the appropriate commands and use subpackages which are imported throughout the python Notebook. Since the pipeline has been set out in a Notebook, using the sample data, you will be able to run the full script by pressing `>>` and restarting the current kernel. 
+Once Biopython is installed, you will be able to **run** the appropriate commands and use subpackages which are imported throughout the python Notebook. Since the pipeline has been set out in a Notebook, using the sample data, you will be able to run the full script by pressing `>>` and restarting the current kernel. 
  
 
 ## Biopython workflow and uploading sequences of interest
@@ -73,9 +73,9 @@ print("Protein String: ", prot_seq
 
 ## Pairwise Alignment Workflow
 
-**5.** Import the appropriate subpackages for alignment and create a PairwiseAligner object (line 16 of Python Notebook).
+**1.** Import the appropriate subpackages for alignment and create a PairwiseAligner object (line 16 of Python Notebook).
 
-**6.** Load `BLOSUM62` substitution matrix and calculate the global alignment of the sequences. You can change the mismatch score (-10) and gap penalty (-0.5) and should you be comparing DNA or RNA sequences, one should consider which substitution matrix to apply as BLOSUM62 is specific for protein sequences.
+**2.** Load `BLOSUM62` substitution matrix and calculate the global alignment of the sequences. You can change the mismatch score (-10) and gap penalty (-0.5) and should you be comparing DNA or RNA sequences, one should consider which substitution matrix to apply as BLOSUM62 is specific for protein sequences.
 
 ```ruby
 from Bio.Align import substitution_matrices
@@ -85,7 +85,7 @@ aligner.substitution_matrices = matrix
 alignments = pairwise2.align.globalds(Seq1, Seq2, matrix, -10, -0.5)
 ```
 
-**7.** Perform local alignment for specific domains or regions of interest. If using different sequences, you will need to change the sequences in order to compare your regions of interest. Sequences in this pipeline are taken from known understanding of the conserved domains within the hMEF2C protein. 
+**3.** Perform local alignment for specific domains or regions of interest. If using different sequences, you will need to change the sequences in order to compare your regions of interest. Sequences in this pipeline are taken from known understanding of the conserved domains within the hMEF2C protein. 
 
 ```ruby
 alignements = aligner.align('Sequence1', 'Sequence2')
@@ -93,7 +93,7 @@ alignment = alignments[0]
 print(alignment)
 ```
 
-**7b.** For lengthier domains or regions of interest, we found it beneficial to run the local `pairwise2` function to enable formatting of the alignment.
+**3b.** For lengthier domains or regions of interest, we found it beneficial to run the local `pairwise2` function to enable formatting of the alignment.
 
 ```ruby
 alignments = pairwise2.align.localds('Sequence1', 'Sequence2')
