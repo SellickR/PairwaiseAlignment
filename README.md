@@ -23,7 +23,11 @@ The project was created with:
 
   **1.** Download the python notebook in this repository.
  
-  **2.** For sample data, download the fasta files in this repository. Make sure that the notebook & sample datafiles are located in a single directory. 
+  **2.** For sample data, download the fasta files below, which are also available in the repository. Make sure that the notebook & sample datafiles are located in a single directory. 
+  
+  https://github.com/SellickR/PairwiseAlignment/blob/main/dMEF2_dna.fasta
+  https://github.com/SellickR/PairwiseAlignment/blob/main/dMEF2_prot_seq.fasta
+  https://github.com/SellickR/PairwiseAlignment/blob/main/hMEF2C_prot_seq.fasta
 
 You will need to make sure that `Biopython` is installed on your device for analysis of DNA, RNA, and proteins.
 
@@ -31,7 +35,7 @@ You will need to make sure that `Biopython` is installed on your device for anal
 pip install biopython
 ```
 
-Once Biopython is installed, you will be able to run the appropriate commands and use subpackages which are imported throughout the python Notebook.
+Once Biopython is installed, you will be able to run the appropriate commands and use subpackages which are imported throughout the python Notebook. Since the pipeline has been set out in a Notebook, using the sample data, you will be able to run the full script by pressing `>>` and restarting the current kernel. 
  
 
 ## Biopython workflow and uploading sequences of interest
